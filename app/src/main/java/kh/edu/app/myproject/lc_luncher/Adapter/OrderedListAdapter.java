@@ -8,8 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import kh.edu.app.myproject.lc_luncher.DB.DBOperations;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import kh.edu.app.myproject.lc_luncher.MySingleton;
 import kh.edu.app.myproject.lc_luncher.OnRecyclerViewItemClickListener;
 import kh.edu.app.myproject.lc_luncher.R;
 import kh.edu.app.myproject.lc_luncher.datamodel.OrderedList;
@@ -72,6 +78,7 @@ public class OrderedListAdapter extends RecyclerView.Adapter<OrderedListAdapter.
     public int getItemCount() {
         return orderedLists.length;
     }
+
     public OrderedList getOrderedList(int position) {
         return orderedLists[position];
     }
@@ -100,9 +107,24 @@ public class OrderedListAdapter extends RecyclerView.Adapter<OrderedListAdapter.
             btn_delivered.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DBOperations db = new DBOperations(context);
-                    db.DeleteFromTable("TABLE_ORDERED_LIST","_id="+orderedLists[getAdapterPosition()].getId());
-                    Log.d("fuck button shit3","clicked");
+                    String url = "http://10.0.2.2/admin_view.php?process=1&id_order="+orderedLists[getAdapterPosition()].getId();
+                    StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            if (response.contains("ok")){
+                                Toast.makeText(context,"On the Way to your Customer",Toast.LENGTH_LONG).show();
+                                notifyItemRemoved(getAdapterPosition());
+                            }
+                            else
+                                Toast.makeText(context,"Error from server",Toast.LENGTH_LONG).show();
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Log.d("Pory","Orderlist Adapter ErrorResponse "+error.getMessage());
+                        }
+                    });
+                    MySingleton.getInstance(context).addToRequestQueue(stringRequest);
                 }
             });
 

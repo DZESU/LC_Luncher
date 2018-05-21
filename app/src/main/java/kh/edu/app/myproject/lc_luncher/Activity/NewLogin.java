@@ -77,6 +77,7 @@ public class NewLogin extends AppCompatActivity {
             User.setGender(result.getString("_gender"));
             User.setPhoneNumber(result.getString("_phone_number"));
             User.setPassWord(result.getString("_token"));
+            User.setStatus(result.getInt("_admin"));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -272,7 +273,7 @@ public class NewLogin extends AppCompatActivity {
                         Log.d("Pory", "Just Want to Check");
                         Log.d("Pory Check Token", result.getString("_token") + "");
 
-                        boolean checkToken;
+                        boolean checkToken = false;
                         if (token.equals(result.getString("_token"))) {
                             Log.d("Pory Check Token", "true" + result.getString("_token"));
                             checkToken = true;
@@ -281,14 +282,15 @@ public class NewLogin extends AppCompatActivity {
                             Log.d("Pory check token", "false");
                             checkToken = false;
                         }
-
-                        if (checkToken && token == "1995206714047553") {
+                        //admin = 1, cilent = 0
+                        if (checkToken && User.getStatus() == 1) {
+                            Log.d("Pory ", "Login as admin");
                             intent.setClass(NewLogin.this, AdminActivity.class);
                             startActivity(intent);
                             finish();
                         }
 
-                        if (checkToken) {
+                        else if (checkToken) {
                             intent.setClass(NewLogin.this, HomeFoodActivity.class);
                             startActivity(intent);
                             finish();
@@ -317,19 +319,19 @@ public class NewLogin extends AppCompatActivity {
         JsonArrayRequest request = new JsonArrayRequest(url, listener, errorListener);
         MySingleton.getInstance(NewLogin.this).addToRequestQueue(request);
 
-        Log.d("Pory Pw and Token","Pw  = " +User.getPassWord()+ "   Token   = "+token);
     }
 
     private void onLogin(LoginType loginType){
 
         Intent intent = new Intent(this, AccountKitActivity.class);
-
+        String client = "+85570319640";
+        String admin = "+85586474809";
         AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
                 new AccountKitConfiguration.AccountKitConfigurationBuilder(
                         loginType, AccountKitActivity.ResponseType.TOKEN
                 );
         configurationBuilder.setDefaultCountryCode("KH");
-        configurationBuilder.setInitialPhoneNumber(new PhoneNumber("KH","+85570319640","116"));
+        configurationBuilder.setInitialPhoneNumber(new PhoneNumber("KH",admin,"116"));
 
         AccountKitConfiguration configuration = configurationBuilder.build();
         intent.putExtra(AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION,configuration);

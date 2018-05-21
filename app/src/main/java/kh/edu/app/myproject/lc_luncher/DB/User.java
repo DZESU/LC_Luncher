@@ -5,13 +5,14 @@ package kh.edu.app.myproject.lc_luncher.DB;
  */
 
 public class User {
-    public User(int id, String userName, String DOB, String gender, String phoneNumber, String passWord) {
+    public User(int id, String userName, String DOB, String gender, String phoneNumber, String passWord, int status) {
         this.userName = userName;
         this.DOB = DOB;
         this.id = id;
         this.gender = gender;
         this.phoneNumber = phoneNumber;
         this.passWord = passWord;
+        this.status = status;
 
     }
 
@@ -21,7 +22,16 @@ public class User {
     private static String phoneNumber;
     private static String passWord;
     private static int id;
+    private static int status;
 
+
+    public static int getStatus() {
+        return status;
+    }
+
+    public static void setStatus(int status) {
+        User.status = status;
+    }
 
     public static int getId() {
         return id;
@@ -30,8 +40,6 @@ public class User {
     public static void setId(int id) {
         User.id = id;
     }
-
-
 
     public static String getUserName() {
         return userName;

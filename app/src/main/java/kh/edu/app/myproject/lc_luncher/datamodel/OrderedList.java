@@ -6,14 +6,13 @@ package kh.edu.app.myproject.lc_luncher.datamodel;
 
 public class OrderedList {
 
-    public OrderedList(int id, String name, int price,int quantity, String thumbnail,String date, String address, String phoneNumber, String username){
+    public OrderedList(int id, String name, int price,int quantity, String thumbnail,String date, String phoneNumber, String username){
         this.id = id;
         this.quantity = quantity;
         this.foodName= name;
         this.price = price;
         this.thumbnail = thumbnail;
         this.date = date;
-        this.address = address;
         this.phoneNumber = phoneNumber;
         this.username = username;
 
@@ -21,7 +20,6 @@ public class OrderedList {
 
     private String foodName;
     private String username;
-    private String address;
     private String phoneNumber;
     private String date;
     private int price;
@@ -60,14 +58,6 @@ public class OrderedList {
         this.username = username;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -102,4 +92,17 @@ public class OrderedList {
 
     private int quantity;
 
+    @Override
+    public String toString() {
+        return "OrderedList{" +
+                "foodName='" + foodName + '\'' +
+                ", username='" + username + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", date='" + date + '\'' +
+                ", price=" + price +
+                ", id=" + id +
+                ", thumbnail='" + thumbnail + '\'' +
+                ", quantity=" + quantity +
+                '}';
+    }
 }

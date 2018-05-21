@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             User.setGender(result.getString("_gender"));
             User.setPhoneNumber(result.getString("_phone_number"));
             User.setPassWord(result.getString("_token"));
+            User.setStatus(result.getInt("_admin"));
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -112,14 +113,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         checkToken = false;
                     }
 
-                    if(checkToken && token=="1995206714047553") {
+                    if(checkToken && User.getStatus() == 1) {
+                        Log.d("Pory ", "Login as admin");
                         intent.setClass(MainActivity.this,AdminActivity.class);
                         startActivity(intent);
                         MainActivity.this.finish();
                     }
 
-                    if (checkToken)
+                    else if (checkToken)
                     {
+                        Log.d("Pory ", "Login as client");
                         intent.setClass(MainActivity.this,HomeFoodActivity.class);
                         startActivity(intent);
                         MainActivity.this.finish();

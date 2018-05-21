@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:background="#FF4500"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="297dp"
+                android:layout_height="497dp"
+                android:background="#fff"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="450dp"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ឈ្មោះអ្នកប្រើប្រាស់*"
+                        android:textSize="20dp" />
+
+                    <EditText
+                        android:id="@+id/reg_user_name"
+                        android:ems="20"
+                        android:hint="Enter User Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                         />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ថ្ងៃ ខែ ឆ្នាំ កំណើត"
+                        android:textSize="20dp" />
+
+                    <EditText
+                        android:id="@+id/reg_DOB"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ភេទ"
+                        android:textSize="20dp" />
+
+                    <EditText
+                        android:id="@+id/reg_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sp_contact">
+
+                    </Spinner>
+                    <Button
+                        android:id="@+id/btn_reg"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+
+                        android:text="បន្ទាប់"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

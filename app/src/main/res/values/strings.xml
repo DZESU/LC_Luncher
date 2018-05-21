@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">LC_Luncher</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+    <string name="ak_login_protocol_scheme">ak1701570026817128</string>
+    <string name="FACEBOOK_APP_ID">1701570026817128</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">6cb9786a01163aaf9d147d9202d965dc</string>
+
+    <string-array name="Contact_info">
+        <item></item>
+        <item>Phone</item>
+        <item>Email</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

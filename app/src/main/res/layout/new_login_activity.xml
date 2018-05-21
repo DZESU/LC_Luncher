@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lc_logo"
+        android:src="@drawable/bgnew"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lclogo"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+    <Button
+
+        android:layout_width="match_parent"
+        android:background="@color/LCcolor"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_centerVertical="true"
+        android:text="Login With Phone Number"
+        android:textSize="20sp"
+        android:onClick="onPhoneLogin"
+        android:textColor="#FFF"
+        android:id="@+id/btn_login_phone"
+        android:layout_height="65dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:background="@color/LCcolor"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:onClick="onEmailLogin"
+        android:layout_below="@id/btn_login_phone"
+        android:text="Login With Email"
+        android:textSize="20sp"
+        android:textColor="#FFF"
+        android:id="@+id/btn_login_email"
+        android:layout_height="65dp" />
+
+
+</RelativeLayout>

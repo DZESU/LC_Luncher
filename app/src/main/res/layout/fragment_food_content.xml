@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:id="@+id/img_food"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_food"
+            android:text="Food Name"
+            android:textColor="@color/LCcolor"
+            android:layout_marginLeft="30dp"
+            android:textSize="40sp"
+            android:id="@+id/txt_name"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name"
+            android:layout_alignParentRight="true"
+            android:text="Price"
+            android:layout_marginRight="10dp"
+            android:textSize="30sp"
+            android:id="@+id/txt_price"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/txt_price"
+            android:text="content"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/txt_content"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

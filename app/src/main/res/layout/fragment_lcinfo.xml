@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context="kh.edu.app.myproject.lc_luncher.Fragment.LCinfoFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lcview"
+        android:paddingBottom="5dp"/>
+
+    <TextView
+        android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LC lucher"
+        android:textSize="30sp"
+        android:textColor="@color/LCcolor"/>
+    <TextView
+        android:background="#FFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ម៉ោងបើក: 7:00am - 8:30pm
+លេខទូរសព្ទ័: 088-168-168
+អាស័យដ្ឋាន: ក្រោយព្រះមរណរាជ្យវាំង"
+
+        android:paddingLeft="15dp"
+        android:textSize="24sp"
+        android:textColor="#111110"/>
+
+</LinearLayout>

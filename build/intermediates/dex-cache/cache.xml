@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.googlecode.libphonenumber\libphonenumber\8.8.9\d1ef356357623cfbeb99f5eb64d65a1bf5c75191\libphonenumber-8.8.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d1ef356357623cfbeb99f5eb64d65a1bf5c75191">
+        <dex dex="G:\CKCC_Class\LCproject\LC_Luncher\app\build\intermediates\pre-dexed\debug\libphonenumber-8.8.9_874ca31ccfccafeffb3bb63f6904e720cee55534.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\235d8166ec797b7f52a13c052cc7a8c91b7614bb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3092540a05ad7bc8fe6e06216d878436c06d7da9">
+        <dex dex="G:\CKCC_Class\LCproject\LC_Luncher\app\build\intermediates\pre-dexed\debug\classes_f9b11c908df52ae7f3f3496666f8ecf3903f22c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\081be80620b8a3e76a7586f10f9ba15727834fd0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="233d88c6f961d2a84758dfe27b7af61318190c7b">
+        <dex dex="G:\CKCC_Class\LCproject\LC_Luncher\app\build\intermediates\pre-dexed\debug\classes_4c79d17756e4309845b835ac94aa1165c15901b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\ad3554476ca379205d979e328a1f84a6f709e8f6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6746a3078625563a9eb381920f34e47ccd6bab87">
+        <dex dex="G:\CKCC_Class\LCproject\LC_Luncher\app\build\intermediates\pre-dexed\debug\classes_3e50eb0fa69b6ad028a1ce0b2ebf5a4a9dd81422.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\6b23206e77b1aca0f47de0e2ee52638378cac794\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d2af2ef4d987d753f2e8ee2d1480ab964d5c7273">
+        <dex dex="G:\CKCC_Class\LCproject\LC_Luncher\app\build\intermediates\pre-dexed\debug\classes_3190cd19477af4f42594c73e449c6732bd84e70c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\6a35e9c829e58fb126a90468a5449ec8d1793957\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="5ad3911825107d8dd4b017fdecebfd23c08048dd">
+        <dex dex="G:\CKCC_Class\LCproject\LC_Luncher\app\build\intermediates\pre-dexed\debug\classes_042598c232a8a57464d2abf133f74cb76c1d088f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\0c29e9d9b95cb3fc70b8e2d6993e2a0a4cf495f3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fe94ced585bffcf3c7f788a294cc54e6785544ac">
+        <dex dex="G:\CKCC_Class\LCproject\LC_Luncher\app\build\intermediates\pre-dexed\debug\classes_a8577fb169747ff3da5455518eb3a1a0442f2b0a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\ae9d75b9740158b6afcd551b18910223fdaff4df\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0a23c4daa97697118d96f2b09d1dbaf9ea943d8d">
+        <dex dex="G:\CKCC_Class\LCproject\LC_Luncher\app\build\intermediates\pre-dexed\debug\classes_f49685740713dcbb0fa6e1e88fc05472ba50eb3f.jar" />
+    </item>
+
+</items>

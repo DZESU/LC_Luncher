@@ -15,6 +15,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import kh.edu.app.myproject.lc_luncher.MySingleton;
 import kh.edu.app.myproject.lc_luncher.OnRecyclerViewItemClickListener;
 import kh.edu.app.myproject.lc_luncher.R;
@@ -26,16 +29,17 @@ import kh.edu.app.myproject.lc_luncher.datamodel.OrderedList;
 
 public class OrderedListAdapter extends RecyclerView.Adapter<OrderedListAdapter.OrderedListViewHolder> {
 
-    private OrderedList[] orderedLists;
+    private List<OrderedList> orderedLists;
     private Context context;
     private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;
 
     public OrderedListAdapter(Context context) {
-        orderedLists = new OrderedList[0];
+        this.orderedLists = new ArrayList<>();
         this.context = context;
     }
 
-    public void setOrderedLists(OrderedList[] orderedLists) {
+    public void setOrderedLists(List<OrderedList> orderedLists) {
+
         this.orderedLists = orderedLists;
     }
 
@@ -53,20 +57,21 @@ public class OrderedListAdapter extends RecyclerView.Adapter<OrderedListAdapter.
     public void onBindViewHolder(OrderedListAdapter.OrderedListViewHolder holder, int position) {
 
         try {
-            Log.d("fuck this shit3","Price "+orderedLists[position].getPrice());
-            Log.d("fuck this shit3","Quantity "+orderedLists[position].getQuantity());
-            holder.txt_user.setText(""+orderedLists[position].getUsername());
-            holder.txt_name.setText("" + orderedLists[position].getFoodName());
 
-            holder.txt_quantity.setText("ចំនួន: " + orderedLists[position].getQuantity());
-            holder.txt_date.setText("កាលបរិច្ឆេទ: " + orderedLists[position].getDate());
-            holder.txt_phnoneNumber.setText(""+orderedLists[position].getPhoneNumber());
-//            holder.txt_address.setText(""+orderedLists[position].getAddress());
-            holder.txt_price.setText("តម្លៃ: " + orderedLists[position].getPrice());
-            Log.d("fuck this shit",orderedLists[position].getUsername());
-            Log.d("fuck this shit1",orderedLists[position].getUsername());
-            Log.d("fuck this shit2",orderedLists[position].getUsername());
-            Log.d("fuck this shit3",orderedLists[position].getUsername());
+            Log.d("fuck this shit3","Price "+orderedLists.get(position).getPrice());
+            Log.d("fuck this shit3","Quantity "+orderedLists.get(position).getQuantity());
+            holder.txt_user.setText(""+orderedLists.get(position).getUsername());
+            holder.txt_name.setText("" + orderedLists.get(position).getFoodName());
+
+            holder.txt_quantity.setText("ចំនួន: " + orderedLists.get(position).getQuantity());
+            holder.txt_date.setText("កាលបរិច្ឆេទ: " + orderedLists.get(position).getDate());
+            holder.txt_phnoneNumber.setText(""+orderedLists.get(position).getPhoneNumber());
+//            holder.txt_address.setText(""+orderedLists.get(position).getAddress());
+            holder.txt_price.setText("តម្លៃ: " + orderedLists.get(position).getPrice());
+            Log.d("fuck this shit",orderedLists.get(position).getUsername());
+            Log.d("fuck this shit1",orderedLists.get(position).getUsername());
+            Log.d("fuck this shit2",orderedLists.get(position).getUsername());
+            Log.d("fuck this shit3",orderedLists.get(position).getUsername());
 
         }
         catch (Exception e) {
@@ -76,12 +81,12 @@ public class OrderedListAdapter extends RecyclerView.Adapter<OrderedListAdapter.
 
     @Override
     public int getItemCount() {
-        return orderedLists.length;
+        return orderedLists.size();
     }
 
-    public OrderedList getOrderedList(int position) {
-        return orderedLists[position];
-    }
+//    public OrderedList getOrderedList(int position) {
+//        return orderedLists.get(position);
+//    }
 
     class OrderedListViewHolder extends RecyclerView.ViewHolder {
         TextView txt_name;
@@ -107,12 +112,13 @@ public class OrderedListAdapter extends RecyclerView.Adapter<OrderedListAdapter.
             btn_delivered.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String url = "http://10.0.2.2/admin_view.php?process=1&id_order="+orderedLists[getAdapterPosition()].getId();
+                    String url = "http://10.0.2.2/admin_view.php?process=1&id_order="+orderedLists.get(getAdapterPosition()).getId();
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             if (response.contains("ok")){
-                                Toast.makeText(context,"On the Way to your Customer",Toast.LENGTH_LONG).show();
+                                Toast.makeText(context,"On the Way to your Customer "+orderedLists.size(),Toast.LENGTH_LONG).show();
+                                onRecyclerViewItemClickListener.onRecyclerViewItemClick(getAdapterPosition(),0);
                                 notifyItemRemoved(getAdapterPosition());
                             }
                             else

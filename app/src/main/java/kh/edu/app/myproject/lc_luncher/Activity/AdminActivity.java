@@ -20,8 +20,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import kh.edu.app.myproject.lc_luncher.Adapter.OrderedListAdapter;
 import kh.edu.app.myproject.lc_luncher.MySingleton;
+import kh.edu.app.myproject.lc_luncher.OnRecyclerViewItemClickListener;
 import kh.edu.app.myproject.lc_luncher.R;
 import kh.edu.app.myproject.lc_luncher.datamodel.OrderedList;
 
@@ -31,11 +35,12 @@ import kh.edu.app.myproject.lc_luncher.datamodel.OrderedList;
 
 
 
-public class AdminActivity extends AppCompatActivity {
+public class AdminActivity extends AppCompatActivity implements OnRecyclerViewItemClickListener {
 
 
     RecyclerView recyclerView;
     OrderedListAdapter adapter;
+    List<OrderedList> orderedLists;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +69,7 @@ public class AdminActivity extends AppCompatActivity {
 //        OrderedList[] orderedLists= dbOperations.getAllOrderedList();
 
         adapter = new OrderedListAdapter(this);
+        adapter.setOnRecyclerViewItemClickListener(this);
         loadDataFromServer();
 //        adapter.setOrderedLists(orderedLists);
         recyclerView.setAdapter(adapter);
@@ -82,7 +88,7 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONArray response) {
 
-                OrderedList[] orderedLists = new OrderedList[response.length()];
+                orderedLists = new ArrayList();
                 for(int i=0; i<response.length();i++){
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
@@ -97,7 +103,7 @@ public class AdminActivity extends AppCompatActivity {
 
                         OrderedList orderedList = new OrderedList(id,name,price,quantity,thumbnail,date,phone,username);
                         Log.d("Pory Admin","On respond "+orderedList.toString());
-                        orderedLists[i]=orderedList;
+                        orderedLists.add(orderedList);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -116,5 +122,10 @@ public class AdminActivity extends AppCompatActivity {
 
         MySingleton.getInstance(this).addToRequestQueue(jsonArrayRequest);
 
+    }
+
+    @Override
+    public void onRecyclerViewItemClick(int position, int idView) {
+        orderedLists.remove(position);
     }
 }

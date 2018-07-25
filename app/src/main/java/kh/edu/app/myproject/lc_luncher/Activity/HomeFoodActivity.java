@@ -125,7 +125,7 @@ import kh.edu.app.myproject.lc_luncher.datamodel.Food;
                 break;
             case R.id.mnu_dessert:
                 Log.d("Pory","Enum check  "+Food.Category.DESSERT.toString());
-                OnNavClicked(new FoodsFragment("tbl_dessert"));
+                OnNavClicked(new FoodsFragment(Food.Category.DESSERT.toString()));
                 getSupportActionBar().setTitle("Dessert");
                 break;
             case R.id.mnu_info:
@@ -138,11 +138,11 @@ import kh.edu.app.myproject.lc_luncher.datamodel.Food;
                 break;
             case R.id.mnu_profile:
                 launchAccountActivity(PersonalInfoFragment.class,phoneNumber);
-
                 break;
             case R.id.mnu_history:
                 launchAccountActivity(HistoryFragment.class,null);
                 break;
+
         }
         drawerLayout.closeDrawers();
         return true;

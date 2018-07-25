@@ -46,13 +46,6 @@
         </item>
 
         <item
-            android:id="@+id/mnu_location"
-            android:icon="@drawable/ic_location_l"
-            android:title="Location">
-
-        </item>
-
-        <item
             android:id="@+id/mnu_info"
             android:icon="@drawable/ic_info_l"
             android:title="LC Luncher">

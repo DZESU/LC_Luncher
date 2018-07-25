@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp"
+    android:padding="10dp"
     tools:context="kh.edu.app.myproject.lc_luncher.Fragment.LCinfoFragment">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:src="@drawable/lcview"
-        android:paddingBottom="5dp"/>
+        />
 
     <TextView
         android:background="#FFF"
@@ -30,5 +30,11 @@
         android:paddingLeft="15dp"
         android:textSize="24sp"
         android:textColor="#111110"/>
+    <com.google.android.gms.maps.MapView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map">
+
+    </com.google.android.gms.maps.MapView>
 
 </LinearLayout>

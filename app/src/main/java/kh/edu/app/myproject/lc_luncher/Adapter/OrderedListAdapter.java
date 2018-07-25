@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
 
 import java.util.ArrayList;
@@ -66,6 +67,7 @@ public class OrderedListAdapter extends RecyclerView.Adapter<OrderedListAdapter.
             holder.txt_quantity.setText("ចំនួន: " + orderedLists.get(position).getQuantity());
             holder.txt_date.setText("កាលបរិច្ឆេទ: " + orderedLists.get(position).getDate());
             holder.txt_phnoneNumber.setText(""+orderedLists.get(position).getPhoneNumber());
+            holder.img_thumbnail.setImageUrl(orderedLists.get(position).getThumbnail(), MySingleton.getInstance(context).getImageLoader());
 //            holder.txt_address.setText(""+orderedLists.get(position).getAddress());
             holder.txt_price.setText("តម្លៃ: " + orderedLists.get(position).getPrice());
             Log.d("fuck this shit",orderedLists.get(position).getUsername());
@@ -96,6 +98,7 @@ public class OrderedListAdapter extends RecyclerView.Adapter<OrderedListAdapter.
         TextView txt_phnoneNumber;
         TextView txt_user;
         TextView txt_date;
+        NetworkImageView img_thumbnail;
         Button btn_delivered;
 
         public OrderedListViewHolder(View itemView) {
@@ -108,6 +111,7 @@ public class OrderedListAdapter extends RecyclerView.Adapter<OrderedListAdapter.
             txt_date = (TextView) itemView.findViewById(R.id.txt_date);
             txt_address = (TextView) itemView.findViewById(R.id.txt_arddess);
             btn_delivered = (Button) itemView.findViewById(R.id.btn_delivered);
+            img_thumbnail = (NetworkImageView) itemView.findViewById(R.id.icon_food);
 
             btn_delivered.setOnClickListener(new View.OnClickListener() {
                 @Override
